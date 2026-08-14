@@ -337,6 +337,42 @@
   .screen-content .row{display:flex; gap:8px; margin:10px 0;}
   .screen-content .block{background:#141c2b; border-radius:4px;}
 
+  /* Live portfolio previews inside the hero mockups */
+  .site-preview{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    background:#fff;
+  }
+
+  .desktop-preview{
+    height:260px;
+  }
+
+  .mobile-preview{
+    aspect-ratio:9/17.5;
+  }
+
+  .site-preview iframe{
+    position:absolute;
+    border:0;
+    pointer-events:none;
+    background:#fff;
+    transform-origin:top left;
+  }
+
+  .desktop-preview iframe{
+    width:1440px;
+    height:900px;
+    transform:scale(.285);
+  }
+
+  .mobile-preview iframe{
+    width:390px;
+    height:844px;
+    transform:scale(.285);
+  }
+
   /* ---------- Authority strip ---------- */
   .strip{
     background:var(--bg-secondary);
@@ -1036,24 +1072,28 @@
       <div class="laptop">
         <div class="laptop-screen">
           <div class="dots"><span></span><span></span><span></span></div>
-          <div class="screen-content" style="padding:22px;">
-            <div class="bar" style="width:38%; margin-bottom:18px;"></div>
-            <div class="row"><div class="block" style="width:60%; height:70px;"></div><div class="block" style="width:40%; height:70px;"></div></div>
-            <div class="row"><div class="block" style="width:100%; height:14px;"></div></div>
-            <div class="row"><div class="block" style="width:80%; height:14px;"></div></div>
-            <div class="row" style="margin-top:16px;"><div class="block" style="width:30%; height:34px; background:linear-gradient(135deg,#087BFF,#00A3FF);"></div></div>
+          <div class="screen-content site-preview desktop-preview">
+            <iframe
+              src="https://sevora-six.vercel.app/"
+              title="Prévia do projeto SAVORA"
+              loading="lazy"
+              tabindex="-1"
+              aria-hidden="true">
+            </iframe>
           </div>
         </div>
         <div class="laptop-base"></div>
       </div>
       <div class="phone">
         <div class="phone-screen">
-          <div class="screen-content" style="padding:14px; aspect-ratio:9/17.5;">
-            <div class="bar" style="width:50%; margin-bottom:14px;"></div>
-            <div class="row"><div class="block" style="width:100%; height:60px;"></div></div>
-            <div class="row"><div class="block" style="width:100%; height:10px;"></div></div>
-            <div class="row"><div class="block" style="width:70%; height:10px;"></div></div>
-            <div class="row" style="margin-top:14px;"><div class="block" style="width:100%; height:26px; background:linear-gradient(135deg,#087BFF,#00A3FF);"></div></div>
+          <div class="screen-content site-preview mobile-preview">
+            <iframe
+              src="https://vetora-azure.vercel.app/"
+              title="Prévia do projeto VETORA"
+              loading="lazy"
+              tabindex="-1"
+              aria-hidden="true">
+            </iframe>
           </div>
         </div>
       </div>
