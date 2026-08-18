@@ -1471,9 +1471,15 @@ src="https://www.facebook.com/tr?id=2164365467838668&ev=PageView&noscript=1"
   // Google Analytics 4 — eventos de conversão e portfólio
   document.querySelectorAll('[data-ga-event]').forEach(link => {
     link.addEventListener('click', () => {
+      const eventName = link.dataset.gaEvent;
+
+      // Meta Pixel — registra contato somente nos CTAs de orçamento.
+      if (eventName === 'solicitar_orcamento' && typeof fbq === 'function') {
+        fbq('track', 'Contact');
+      }
+
       if (typeof gtag !== 'function') return;
 
-      const eventName = link.dataset.gaEvent;
       const params = {
         link_url: link.href,
         link_text: link.textContent.trim()
